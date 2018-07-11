@@ -903,7 +903,7 @@ Blockly.Blocks['robot_is_done_fetch'] = {
   init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"]]), "NAME")
-        .appendField("is done");
+        .appendField(" is done");
     this.setOutput(true, "Boolean");
     this.setColour(120);
     this.setTooltip("Checks if the chosen action is completed");
