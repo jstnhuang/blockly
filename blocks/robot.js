@@ -653,7 +653,7 @@ Blockly.Blocks['robot_start_timer'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(345);
     this.setTooltip('Starts a timer for the given value of time');
     this.setHelpUrl('');
   }
@@ -670,7 +670,7 @@ Blockly.Blocks['robot_wait_for_seconds'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(345);
     this.setTooltip('Makes the robot pause and wait for some time.');
     this.setHelpUrl('');
   }
@@ -906,7 +906,7 @@ Blockly.Blocks['robot_is_done_fetch'] = {
         .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"]]), "NAME")
         .appendField("done");
     this.setOutput(true, "Boolean");
-    this.setColour(120);
+    this.setColour(345);
     this.setTooltip("Checks if the chosen action is completed");
     this.setHelpUrl("");
   }
@@ -919,7 +919,7 @@ Blockly.Blocks['robot_cancel_fetch'] = {
         .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"]]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(345);
     this.setTooltip("Cancels the chosen action");
     this.setHelpUrl("");
   }
