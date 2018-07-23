@@ -629,6 +629,24 @@ Blockly.Blocks['robot_manipulation_is_gripper_open'] = {
   }
 };
 
+Blockly.Blocks['robot_manipulation_move_head'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("move head to pan (degrees)");
+    this.appendValueInput("PAN")
+        .setCheck("Number");
+    this.appendValueInput("TILT")
+        .setCheck("Number")
+        .appendField("tilt (degrees)");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+    this.setTooltip("Pan angle ranges from -90 to 90 degrees. Tilt angle ranges from -90 to 45 degrees. ");
+    this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['robot_manipulation_set_torso'] = {
   init: function() {
     this.appendValueInput("HEIGHT")
