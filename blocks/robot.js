@@ -946,7 +946,7 @@ Blockly.Blocks['robot_get_result'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("get result from")
-        .appendField(new Blockly.FieldDropdown([["question","QUESTION"]]), "NAME");
+        .appendField(new Blockly.FieldDropdown([["question","QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"]]), "NAME");
     this.setOutput(true, "String");
     this.setColour(260);
     this.setTooltip("Retrieves result of selected action");
