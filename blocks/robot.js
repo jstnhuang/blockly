@@ -651,7 +651,7 @@ Blockly.Blocks['robot_manipulation_set_torso'] = {
   init: function() {
     this.appendValueInput("HEIGHT")
       .setCheck("Number")
-      .appendField("set torso height (m)");
+      .appendField("move torso to (m)");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
@@ -948,7 +948,7 @@ Blockly.Blocks['robot_get_result'] = {
         .appendField("get result from")
         .appendField(new Blockly.FieldDropdown([["question","QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"]]), "NAME");
     this.setOutput(true, "String");
-    this.setColour(260);
+    this.setColour(345);
     this.setTooltip("Retrieves result of selected action");
     this.setHelpUrl("");
   }
