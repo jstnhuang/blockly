@@ -953,3 +953,15 @@ Blockly.Blocks['robot_get_result'] = {
     this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['robot_get_position'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("get current position of")
+        .appendField(new Blockly.FieldDropdown([["torso", "TORSO"], ["head pan","HEADPAN"], ["head tilt", "HEADTILT"], ["gripper", "GRIPPER"]]), "NAME");
+    this.setOutput(true, "String");
+    this.setColour(345);
+    this.setTooltip("Retrieves the current position of selected component");
+    this.setHelpUrl("");
+  }
+};
