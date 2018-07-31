@@ -961,7 +961,18 @@ Blockly.Blocks['robot_get_position'] = {
         .appendField(new Blockly.FieldDropdown([["torso", "TORSO"], ["head pan","HEADPAN"], ["head tilt", "HEADTILT"], ["gripper", "GRIPPER"]]), "NAME");
     this.setOutput(true, "String");
     this.setColour(345);
-    this.setTooltip("Retrieves the current position of selected component");
+    this.setTooltip("Retrieves the current position of selected component in its respective units, except the gripper, which outputs the gripper gap");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['robot_get_location'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("get current location")
+    this.setOutput(true, "String");
+    this.setColour(345);
+    this.setTooltip("Retrieves current location of robot");
     this.setHelpUrl("");
   }
 };

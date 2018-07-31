@@ -330,3 +330,8 @@ Blockly.JavaScript['robot_get_position'] = function(block) {
   var code = 'robot.getPosition(' + dropdown_name + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
+
+Blockly.JavaScript['robot_get_location'] = function(block) {
+  var code = 'robot.getLocation()';
+  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
