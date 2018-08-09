@@ -954,6 +954,18 @@ Blockly.Blocks['robot_get_result'] = {
   }
 };
 
+Blockly.Blocks['slip_gripper'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("gripper slipped");
+    this.setOutput(true, "Boolean");
+    this.setColour(345);
+ this.setTooltip("Returns true if the gripper has slipped since the last time a goal was sent to the gripper.");
+ this.setHelpUrl("");
+  }
+};
+
+
 Blockly.Blocks['robot_get_position'] = {
   init: function() {
     this.appendDummyInput()
