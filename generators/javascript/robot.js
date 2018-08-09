@@ -225,6 +225,13 @@ Blockly.JavaScript['robot_pbd_programs'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
+Blockly.JavaScript['robot_manipulation_move_head'] = function(block) {
+  var value_pan = Blockly.JavaScript.valueToCode(block, 'PAN', Blockly.JavaScript.ORDER_COMMA);
+  var value_tilt = Blockly.JavaScript.valueToCode(block, 'TILT', Blockly.JavaScript.ORDER_COMMA);
+  var code = 'robot.moveHead(' + value_pan + ', ' + value_tilt + ');\n';
+  return code;
+};
+
 Blockly.JavaScript['robot_manipulation_set_torso'] = function(block) {
   var value_height = Blockly.JavaScript.valueToCode(block, 'HEIGHT', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'robot.setTorso(' + value_height + ');\n';
@@ -319,7 +326,17 @@ Blockly.JavaScript['robot_get_result'] = function(block) {
 };
 
 Blockly.JavaScript['slip_gripper'] = function(block) {
-  
   var code = 'robot.slipGripper()';
+  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['robot_get_position'] = function(block) {
+  var dropdown_name = Blockly.JavaScript.quote_(block.getFieldValue('NAME'));
+  var code = 'robot.getPosition(' + dropdown_name + ')';
+  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};
+
+Blockly.JavaScript['robot_get_location'] = function(block) {
+  var code = 'robot.getLocation()';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };

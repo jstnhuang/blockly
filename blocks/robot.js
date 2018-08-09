@@ -629,11 +629,29 @@ Blockly.Blocks['robot_manipulation_is_gripper_open'] = {
   }
 };
 
+Blockly.Blocks['robot_manipulation_move_head'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("move head to pan (degrees)");
+    this.appendValueInput("PAN")
+        .setCheck("Number");
+    this.appendValueInput("TILT")
+        .setCheck("Number")
+        .appendField("tilt (degrees)");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+    this.setTooltip("Pan angle ranges from -90 to 90 degrees. Tilt angle ranges from -90 to 45 degrees. ");
+    this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['robot_manipulation_set_torso'] = {
   init: function() {
     this.appendValueInput("HEIGHT")
       .setCheck("Number")
-      .appendField("set torso height (m)");
+      .appendField("move torso to (m)");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
@@ -653,7 +671,7 @@ Blockly.Blocks['robot_start_timer'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(345);
     this.setTooltip('Starts a timer for the given value of time');
     this.setHelpUrl('');
   }
@@ -670,7 +688,7 @@ Blockly.Blocks['robot_wait_for_seconds'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(345);
     this.setTooltip('Makes the robot pause and wait for some time.');
     this.setHelpUrl('');
   }
@@ -902,11 +920,10 @@ Blockly.Blocks['robot_pbd_programs'] = {
 Blockly.Blocks['robot_is_done_fetch'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("is")
         .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"]]), "NAME")
-        .appendField("done");
+        .appendField(" is done");
     this.setOutput(true, "Boolean");
-    this.setColour(120);
+    this.setColour(345);
     this.setTooltip("Checks if the chosen action is completed");
     this.setHelpUrl("");
   }
@@ -919,7 +936,7 @@ Blockly.Blocks['robot_cancel_fetch'] = {
         .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"]]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(345);
     this.setTooltip("Cancels the chosen action");
     this.setHelpUrl("");
   }
@@ -929,24 +946,11 @@ Blockly.Blocks['robot_get_result'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("get result from")
-        .appendField(new Blockly.FieldDropdown([["question","QUESTION"]]), "NAME");
+        .appendField(new Blockly.FieldDropdown([["question","QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"]]), "NAME");
     this.setOutput(true, "String");
-    this.setColour(260);
+    this.setColour(345);
     this.setTooltip("Retrieves result of selected action");
     this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['robot_pause_action'] = {
-  init: function() {
-    this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_CENTRE)
-        .appendField("Pause");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(120);
- this.setTooltip("pauses an ongoing action");
- this.setHelpUrl("");
   }
 };
 
@@ -961,3 +965,26 @@ Blockly.Blocks['slip_gripper'] = {
   }
 };
 
+
+Blockly.Blocks['robot_get_position'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("get current position of")
+        .appendField(new Blockly.FieldDropdown([["torso", "TORSO"], ["head pan","HEADPAN"], ["head tilt", "HEADTILT"], ["gripper", "GRIPPER"]]), "NAME");
+    this.setOutput(true, "String");
+    this.setColour(345);
+    this.setTooltip("Retrieves the current position of selected component in its respective units, except the gripper, which outputs the gripper gap");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['robot_get_location'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("get current location")
+    this.setOutput(true, "String");
+    this.setColour(345);
+    this.setTooltip("Retrieves current location of robot");
+    this.setHelpUrl("");
+  }
+};
