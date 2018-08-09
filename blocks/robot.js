@@ -956,7 +956,7 @@ Blockly.Blocks['slip_gripper'] = {
         .appendField("gripper slipped");
     this.setOutput(true, "Boolean");
     this.setColour(345);
- this.setTooltip("Returns true if the gripper has slipped since the last time a goal was sent to the gripper. Note that if the \"start checking if gripper slipped \" block hasn't been used, this block will return false.");
+ this.setTooltip("Returns true if the gripper has slipped since the last time a goal was sent to the gripper.");
  this.setHelpUrl("");
   }
 };
