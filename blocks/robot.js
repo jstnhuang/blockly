@@ -929,6 +929,20 @@ Blockly.Blocks['robot_is_done_fetch'] = {
   }
 };
 
+Blockly.Blocks['robot_wait_for_action_fetch'] = {
+  init: function() {
+    this.appendDummyInput()
+	.appendField("wait for ")
+        .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"]]), "NAME")
+        .appendField(" to be done");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(345);
+    this.setTooltip("Waits for the chosen action to be completed");
+    this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['robot_cancel_fetch'] = {
   init: function() {
     this.appendDummyInput()
