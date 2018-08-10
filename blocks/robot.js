@@ -671,7 +671,7 @@ Blockly.Blocks['robot_start_timer'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(345);
+    this.setColour(120);
     this.setTooltip('Starts a timer for the given value of time');
     this.setHelpUrl('');
   }
@@ -688,7 +688,7 @@ Blockly.Blocks['robot_wait_for_seconds'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(345);
+    this.setColour(120);
     this.setTooltip('Makes the robot pause and wait for some time.');
     this.setHelpUrl('');
   }
@@ -983,7 +983,7 @@ Blockly.Blocks['slip_gripper'] = {
 Blockly.Blocks['robot_get_position'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("get current position of")
+        .appendField("get current value of")
         .appendField(new Blockly.FieldDropdown([["torso", "TORSO"], ["head pan","HEADPAN"], ["head tilt", "HEADTILT"], ["gripper", "GRIPPER"]]), "NAME");
     this.setOutput(true, "String");
     this.setColour(345);
