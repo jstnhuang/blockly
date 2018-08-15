@@ -141,7 +141,7 @@ Blockly.JavaScript['robot_manipulation_open_gripper'] = function(block) {
 };
 
 Blockly.JavaScript['robot_manipulation_close_gripper_with_effort'] = function(block) {
-  var number_force = block.getFieldValue('FORCE') || 120;
+  var number_force = Blockly.JavaScript.valueToCode(block, 'FORCE', Blockly.JavaScript.ORDER_NONE);
   var code = 'robot.closeGripper(' + number_force + ');\n';
   return code;
 };
