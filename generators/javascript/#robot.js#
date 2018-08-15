@@ -141,7 +141,7 @@ Blockly.JavaScript['robot_manipulation_open_gripper'] = function(block) {
 };
 
 Blockly.JavaScript['robot_manipulation_close_gripper_with_effort'] = function(block) {
-  var number_force = Blockly.JavaScript.valueToCode(block, 'FORCE', Blockly.JavaScript.ORDER_NONE);
+  var number_force = block.getFieldValue('FORCE') || 120;
   var code = 'robot.closeGripper(' + number_force + ');\n';
   return code;
 };
@@ -315,13 +315,7 @@ Blockly.JavaScript['robot_is_done_fetch'] = function(block) {
 
 Blockly.JavaScript['robot_wait_for_action_fetch'] = function(block) {
   var dropdown_name = Blockly.JavaScript.quote_(block.getFieldValue('NAME'));
-  if (dropdown_name === '\'ALL_ACTIONS\'') {
-    var code = 'robot.waitForAction(\'TORSO\');\nrobot.waitForAction(\'HEAD\');\n' + 
-	       'robot.waitForAction(\'GRIPPER\');\nrobot.waitForAction(\'QUESTION\');\n' + 
-	       'robot.waitForAction(\'NAVIGATION\');\nrobot.waitForAction(\'PBD\');\n';
-  } else {
-    var code = 'robot.waitForAction(' + dropdown_name + ');\n';
-  }
+  var code = 'robot.waitForAction(' + dropdown_name + ');\n';
   return code;
 };
 
@@ -353,7 +347,7 @@ Blockly.JavaScript['robot_get_location'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
-/*
+
 Blockly.JavaScript['speech_input'] = function(block) {
   var time = Blockly.JavaScript.valueToCode(block, 'SECONDS', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'robot.collectSpeech(' + time + ')';
@@ -366,5 +360,3 @@ Blockly.JavaScript['text_contains'] = function(block) {
   var code = 'robot.speechContains(' + speech_data + ', ' + program_input + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
-
-*/
