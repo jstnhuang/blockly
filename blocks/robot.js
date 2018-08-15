@@ -1002,3 +1002,31 @@ Blockly.Blocks['robot_get_location'] = {
     this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['speech_input'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("speech input from user (collect for");
+    this.appendValueInput("SECONDS")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("seconds)");
+    this.setOutput(true, "String");
+    this.setColour(345);
+ this.setTooltip("Listens to speech input from the user for a specified time between zero and sixty seconds.");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['text_contains'] = {
+  init: function() {
+    this.appendValueInput("INPUT")
+        .setCheck("String")
+        .appendField(new Blockly.FieldVariable("speech input"), "INPUT")
+        .appendField("contains");
+    this.setOutput(true, "Boolean");
+    this.setColour(345);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

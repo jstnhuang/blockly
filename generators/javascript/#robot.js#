@@ -347,7 +347,7 @@ Blockly.JavaScript['robot_get_location'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
-/*
+
 Blockly.JavaScript['speech_input'] = function(block) {
   var time = Blockly.JavaScript.valueToCode(block, 'SECONDS', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'robot.collectSpeech(' + time + ')';
@@ -360,5 +360,3 @@ Blockly.JavaScript['text_contains'] = function(block) {
   var code = 'robot.speechContains(' + speech_data + ', ' + program_input + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
-
-*/
