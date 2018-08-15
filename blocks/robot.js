@@ -577,9 +577,10 @@ Blockly.Blocks['robot_manipulation_open_gripper'] = {
 
 Blockly.Blocks['robot_manipulation_close_gripper_with_effort'] = {
   init: function() {
-    this.appendDummyInput()
+    this.appendValueInput("FORCE")
+        .setCheck("Number")
         .appendField("close gripper with")
-        .appendField(new Blockly.FieldNumber(75, 35, 120), "FORCE")
+    this.appendDummyInput()
         .appendField("N force");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -933,7 +934,7 @@ Blockly.Blocks['robot_wait_for_action_fetch'] = {
   init: function() {
     this.appendDummyInput()
 	.appendField("wait for ")
-        .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"]]), "NAME")
+        .appendField(new Blockly.FieldDropdown([["all actions", "ALL_ACTIONS"], ["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"]]), "NAME")
         .appendField(" to be done");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
