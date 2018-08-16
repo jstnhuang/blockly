@@ -984,7 +984,7 @@ Blockly.Blocks['slip_gripper'] = {
 Blockly.Blocks['robot_get_position'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("get current value of")
+        .appendField("current value of")
         .appendField(new Blockly.FieldDropdown([["torso", "TORSO"], ["head pan","HEADPAN"], ["head tilt", "HEADTILT"], ["gripper", "GRIPPER"]]), "NAME");
     this.setOutput(true, "String");
     this.setColour(345);
@@ -996,7 +996,7 @@ Blockly.Blocks['robot_get_position'] = {
 Blockly.Blocks['robot_get_location'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("get current location")
+        .appendField("current location")
     this.setOutput(true, "String");
     this.setColour(345);
     this.setTooltip("Retrieves current location of robot");
