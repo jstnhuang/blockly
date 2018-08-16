@@ -353,18 +353,22 @@ Blockly.JavaScript['robot_get_location'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
-/*
 Blockly.JavaScript['speech_input'] = function(block) {
   var time = Blockly.JavaScript.valueToCode(block, 'SECONDS', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'robot.collectSpeech(' + time + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
-
+/*
 Blockly.JavaScript['text_contains'] = function(block) {
   var speech_data = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('INPUT'), Blockly.Variables.NAME_TYPE);
-  var program_input = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_ATOMIC);
+  var program_input = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_NONE); 
   var code = 'robot.speechContains(' + speech_data + ', ' + program_input + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
-
 */
+Blockly.JavaScript['speech_contains'] = function(block) {
+  var variable_speech_input = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('speech_input'), Blockly.Variables.NAME_TYPE);
+  var value_phrase = Blockly.JavaScript.valueToCode(block, 'phrase', Blockly.JavaScript.ORDER_ATOMIC);
+  var code = 'robot.speechContains(' + variable_speech_input + ', ' + value_phrase + ')';
+  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};

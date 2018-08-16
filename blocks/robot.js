@@ -1018,12 +1018,25 @@ Blockly.Blocks['speech_input'] = {
  this.setHelpUrl("");
   }
 };
-
+/*
 Blockly.Blocks['text_contains'] = {
   init: function() {
     this.appendValueInput("INPUT")
         .setCheck("String")
-        .appendField(new Blockly.FieldVariable("speech input"), "INPUT")
+        .appendField(new Blockly.FieldVariable("speech input"), "TEXT") 
+        .appendField("contains");
+    this.setOutput(true, "Boolean");
+    this.setColour(345);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+*/
+Blockly.Blocks['speech_contains'] = {
+  init: function() {
+    this.appendValueInput("phrase")
+        .setCheck("String")
+        .appendField(new Blockly.FieldVariable("speech input"), "speech_input")
         .appendField("contains");
     this.setOutput(true, "Boolean");
     this.setColour(345);
