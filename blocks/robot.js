@@ -980,7 +980,6 @@ Blockly.Blocks['slip_gripper'] = {
   }
 };
 
-
 Blockly.Blocks['robot_get_position'] = {
   init: function() {
     this.appendDummyInput()
@@ -1014,24 +1013,23 @@ Blockly.Blocks['speech_input'] = {
         .appendField("seconds)");
     this.setOutput(true, "String");
     this.setColour(345);
- this.setTooltip("Listens to speech input from the user for a specified time between zero and sixty seconds.");
+ this.setTooltip("Listens to speech input from the user for a specified time between zero and sixty seconds. Returns a string that can be analyzed using the speech contains block.");
  this.setHelpUrl("");
   }
 };
-/*
-Blockly.Blocks['text_contains'] = {
+
+Blockly.Blocks['speech_input_wake_word'] = {
   init: function() {
-    this.appendValueInput("INPUT")
+    this.appendValueInput("WAKE_WORD")
         .setCheck("String")
-        .appendField(new Blockly.FieldVariable("speech input"), "TEXT") 
-        .appendField("contains");
-    this.setOutput(true, "Boolean");
+        .appendField("speech input starting at ");
+    this.setOutput(true, "String");
     this.setColour(345);
- this.setTooltip("");
+ this.setTooltip("Returns a string containing speech starting at the wake word. The block will not return until the wake word is heard, and followed by silence. ");
  this.setHelpUrl("");
   }
 };
-*/
+
 Blockly.Blocks['speech_contains'] = {
   init: function() {
     this.appendValueInput("phrase")
@@ -1044,3 +1042,4 @@ Blockly.Blocks['speech_contains'] = {
  this.setHelpUrl("");
   }
 };
+

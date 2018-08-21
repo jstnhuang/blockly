@@ -358,14 +358,15 @@ Blockly.JavaScript['speech_input'] = function(block) {
   var code = 'robot.collectSpeech(' + time + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
-/*
-Blockly.JavaScript['text_contains'] = function(block) {
-  var speech_data = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('INPUT'), Blockly.Variables.NAME_TYPE);
-  var program_input = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_NONE); 
-  var code = 'robot.speechContains(' + speech_data + ', ' + program_input + ')';
+
+Blockly.JavaScript['speech_input_wake_word'] = function(block) {
+  var wake_word = Blockly.JavaScript.valueToCode(block, 'WAKE_WORD', Blockly.JavaScript.ORDER_ATOMIC);
+  //var hi = 'ciao';
+  //var code = 'robot.collectSpeechWakeWord(' + hi + ')';
+  var code = 'robot.collectSpeechWakeWord(' + wake_word + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
-*/
+
 Blockly.JavaScript['speech_contains'] = function(block) {
   var variable_speech_input = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('speech_input'), Blockly.Variables.NAME_TYPE);
   var value_phrase = Blockly.JavaScript.valueToCode(block, 'phrase', Blockly.JavaScript.ORDER_ATOMIC);
