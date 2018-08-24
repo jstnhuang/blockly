@@ -361,9 +361,7 @@ Blockly.JavaScript['speech_input'] = function(block) {
 
 Blockly.JavaScript['speech_input_wake_word'] = function(block) {
   var wake_word = Blockly.JavaScript.valueToCode(block, 'WAKE_WORD', Blockly.JavaScript.ORDER_ATOMIC);
-  //var hi = 'ciao';
-  //var code = 'robot.collectSpeechWakeWord(' + hi + ')';
-  var code = 'robot.collectSpeechWakeWord(' + wake_word + ')';
+  var code = 'robot.collectSpeechWakeWord(' + wake_word+ ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
