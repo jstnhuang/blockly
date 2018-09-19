@@ -921,7 +921,7 @@ Blockly.Blocks['robot_pbd_programs'] = {
 Blockly.Blocks['robot_is_done_fetch'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"]]), "NAME")
+        .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"], ["speech input","SPEECH_INPUT"], ["speech input wake word","SPEECH_INPUT_WAKE_WORD"]]), "NAME")
         .appendField(" is done");
     this.setOutput(true, "Boolean");
     this.setColour(345);
@@ -948,7 +948,7 @@ Blockly.Blocks['robot_cancel_fetch'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("cancel")
-        .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"]]), "NAME");
+        .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"], ["speech input","SPEECH_INPUT"], ["speech input wake word","SPEECH_INPUT_WAKE_WORD"]]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(345);
@@ -961,7 +961,7 @@ Blockly.Blocks['robot_get_result'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("get result from")
-        .appendField(new Blockly.FieldDropdown([["question","QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"]]), "NAME");
+        .appendField(new Blockly.FieldDropdown([["question","QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["speech input","SPEECH_INPUT"], ["speech input wake word","SPEECH_INPUT_WAKE_WORD"]]), "NAME");
     this.setOutput(true, "String");
     this.setColour(345);
     this.setTooltip("Retrieves result of selected action");
@@ -1000,6 +1000,35 @@ Blockly.Blocks['robot_get_location'] = {
     this.setColour(345);
     this.setTooltip("Retrieves current location of robot");
     this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['robot_start_speech_input'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("start collecting speech input for");
+    this.appendValueInput("SECONDS")
+        .setCheck("Number");
+    this.appendDummyInput()
+        .appendField("seconds");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(345);
+ this.setTooltip("Starts listening to speech input from the user for a specified time between zero and sixty seconds.");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['robot_start_speech_input_wake_word'] = {
+  init: function() {
+    this.appendValueInput("WAKE_WORD")
+        .setCheck("String")
+        .appendField("start listening for speech input beginning with");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(345);
+ this.setTooltip("Starts listening for speech input that begins with the wake word, and captures the first phrase spoken with the wake word followed by silence.");
+ this.setHelpUrl("");
   }
 };
 

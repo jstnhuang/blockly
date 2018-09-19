@@ -353,6 +353,18 @@ Blockly.JavaScript['robot_get_location'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['robot_start_speech_input'] = function(block) {
+  var time = Blockly.JavaScript.valueToCode(block, 'SECONDS', Blockly.JavaScript.ORDER_NONE);
+  var code = 'robot.startCollectSpeech(' + time + ');\n';
+  return code;
+};
+
+Blockly.JavaScript['robot_start_speech_input_wake_word'] = function(block) {
+  var wake_word = Blockly.JavaScript.valueToCode(block, 'WAKE_WORD', Blockly.JavaScript.ORDER_NONE);
+  var code = 'robot.startCollectSpeechWakeWord(' + wake_word+ ');\n';
+  return code;
+};
+
 Blockly.JavaScript['speech_input'] = function(block) {
   var time = Blockly.JavaScript.valueToCode(block, 'SECONDS', Blockly.JavaScript.ORDER_ATOMIC);
   var code = 'robot.collectSpeech(' + time + ')';
