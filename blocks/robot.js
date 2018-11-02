@@ -17,7 +17,7 @@ Blockly.Blocks['robot_display_message_h2'] = {
         .appendField("display message");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(260);
+    this.setColour(125);
     this.setTooltip('Displays a message on the robot\'s screen.');
     this.setHelpUrl('');
   }
@@ -35,7 +35,7 @@ Blockly.Blocks['robot_display_message_h1h2'] = {
         .appendField("regular text");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(260);
+    this.setColour(125);
     this.setTooltip('Displays a message with both big and regular size text.');
     this.setHelpUrl('');
   }
@@ -117,7 +117,7 @@ Blockly.Blocks['robot_display_wait_for_button'] = {
         .appendField("button text");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(260);
+    this.setColour(340);
     this.setTooltip('Waits for a button to be pressed.');
     this.setHelpUrl('');
   }
@@ -129,7 +129,7 @@ Blockly.Blocks['robot_movement_go_to'] = {
         .setCheck("String")
         .appendField("go to");
     this.setOutput(true, "Boolean");
-    this.setColour(230);
+    this.setColour(75);
     this.setTooltip('Makes the robot go to a named location.');
     this.setHelpUrl('');
   }
@@ -153,7 +153,7 @@ Blockly.Blocks['robot_sound_say'] = {
         .appendField("say");
     this.setPreviousStatement(true);
     this.setNextStatement(true);
-    this.setColour(65);
+    this.setColour(115);
     this.setTooltip('Makes the robot say something.');
     this.setHelpUrl('');
   }
@@ -557,7 +557,7 @@ Blockly.Blocks['robot_manipulation_run_pbd_program'] = {
         .setCheck(null)
         .appendField("run Rapid PbD program");
     this.setOutput(true, "Boolean");
-    this.setColour(230);
+    this.setColour(65);
     this.setTooltip('Runs a Rapid PbD program');
     this.setHelpUrl('');
   }
@@ -569,7 +569,7 @@ Blockly.Blocks['robot_manipulation_open_gripper'] = {
         .appendField("open gripper");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(105);
     this.setTooltip('Opens the gripper.');
     this.setHelpUrl('');
   }
@@ -584,7 +584,7 @@ Blockly.Blocks['robot_manipulation_close_gripper_with_effort'] = {
         .appendField("N force");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(105);
     this.setTooltip('Closes the gripper with a maximum amount of force');
     this.setHelpUrl('');
   }
@@ -642,7 +642,7 @@ Blockly.Blocks['robot_manipulation_move_head'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(95);
     this.setTooltip("Pan angle ranges from -90 to 90 degrees. Tilt angle ranges from -90 to 45 degrees. ");
     this.setHelpUrl("");
   }
@@ -655,7 +655,7 @@ Blockly.Blocks['robot_manipulation_set_torso'] = {
       .appendField("move torso to (m)");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(230);
+    this.setColour(85);
     this.setTooltip('Enter height between 0 and 0.4 meters');
     this.setHelpUrl('');
   }
@@ -672,7 +672,7 @@ Blockly.Blocks['robot_start_timer'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(0);
     this.setTooltip('Starts a timer for the given value of time');
     this.setHelpUrl('');
   }
@@ -689,7 +689,7 @@ Blockly.Blocks['robot_wait_for_seconds'] = {
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
+    this.setColour(0);
     this.setTooltip('Makes the robot pause and wait for some time.');
     this.setHelpUrl('');
   }
@@ -765,7 +765,7 @@ Blockly.Blocks['robot_start_ask_mc'] = {
         .appendField("list of choices");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(260);
+    this.setColour(340);
     this.setTooltip('Asks a multiple choice question. The user\'s choice is returned.');
     this.setHelpUrl('');
   }
@@ -924,7 +924,7 @@ Blockly.Blocks['robot_is_done_fetch'] = {
         .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"], ["speech input","SPEECH_INPUT"], ["speech input wake word","SPEECH_INPUT_WAKE_WORD"]]), "NAME")
         .appendField(" is done");
     this.setOutput(true, "Boolean");
-    this.setColour(345);
+    this.setColour(20);
     this.setTooltip("Checks if the chosen action is completed");
     this.setHelpUrl("");
   }
@@ -938,7 +938,7 @@ Blockly.Blocks['robot_wait_for_action_fetch'] = {
         .appendField(" to be done");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(345);
+    this.setColour(20);
     this.setTooltip("Waits for the chosen action to be completed");
     this.setHelpUrl("");
   }
@@ -951,7 +951,7 @@ Blockly.Blocks['robot_cancel_fetch'] = {
         .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"], ["speech input","SPEECH_INPUT"], ["speech input wake word","SPEECH_INPUT_WAKE_WORD"]]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(345);
+    this.setColour(20);
     this.setTooltip("Cancels the chosen action");
     this.setHelpUrl("");
   }
@@ -963,7 +963,7 @@ Blockly.Blocks['robot_get_result'] = {
         .appendField("get result from")
         .appendField(new Blockly.FieldDropdown([["question","QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["speech input","SPEECH_INPUT"], ["speech input wake word","SPEECH_INPUT_WAKE_WORD"]]), "NAME");
     this.setOutput(true, "String");
-    this.setColour(345);
+    this.setColour(20);
     this.setTooltip("Retrieves result of selected action");
     this.setHelpUrl("");
   }
@@ -974,7 +974,7 @@ Blockly.Blocks['slip_gripper'] = {
     this.appendDummyInput()
         .appendField("gripper slipped");
     this.setOutput(true, "Boolean");
-    this.setColour(345);
+    this.setColour(105);
  this.setTooltip("Returns true if the gripper has slipped since the last time a goal was sent to the gripper.");
  this.setHelpUrl("");
   }
@@ -986,7 +986,7 @@ Blockly.Blocks['robot_get_position'] = {
         .appendField("current value of")
         .appendField(new Blockly.FieldDropdown([["torso", "TORSO"], ["head pan","HEADPAN"], ["head tilt", "HEADTILT"], ["gripper", "GRIPPER"]]), "NAME");
     this.setOutput(true, "String");
-    this.setColour(345);
+    this.setColour(40);
     this.setTooltip("Retrieves the current position of selected component in its respective units, except the gripper, which outputs the gripper gap");
     this.setHelpUrl("");
   }
@@ -997,7 +997,7 @@ Blockly.Blocks['robot_get_location'] = {
     this.appendDummyInput()
         .appendField("current location")
     this.setOutput(true, "String");
-    this.setColour(345);
+    this.setColour(40);
     this.setTooltip("Retrieves current location of robot");
     this.setHelpUrl("");
   }
@@ -1041,7 +1041,7 @@ Blockly.Blocks['speech_input'] = {
     this.appendDummyInput()
         .appendField("seconds)");
     this.setOutput(true, "String");
-    this.setColour(345);
+    this.setColour(320);
  this.setTooltip("Listens to speech input from the user for a specified time between zero and sixty seconds. Returns a string that can be analyzed using the speech contains block.");
  this.setHelpUrl("");
   }
@@ -1053,7 +1053,7 @@ Blockly.Blocks['speech_input_wake_word'] = {
         .setCheck("String")
         .appendField("speech input starting at ");
     this.setOutput(true, "String");
-    this.setColour(345);
+    this.setColour(320);
  this.setTooltip("Returns a string containing speech starting at the wake word. The block will not return until the wake word is heard, and followed by silence. ");
  this.setHelpUrl("");
   }
@@ -1066,7 +1066,7 @@ Blockly.Blocks['speech_contains'] = {
         .appendField(new Blockly.FieldVariable("speech input"), "speech_input")
         .appendField("contains");
     this.setOutput(true, "Boolean");
-    this.setColour(345);
+    this.setColour(320);
  this.setTooltip("");
  this.setHelpUrl("");
   }
