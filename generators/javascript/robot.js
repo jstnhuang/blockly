@@ -313,6 +313,11 @@ Blockly.JavaScript['robot_is_done_fetch'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
+Blockly.JavaScript['robot_start'] = function(block) {
+  Blockly.JavaScript.valueToCode(block, 'ACTION', Blockly.JavaScript.ORDER_ASSIGNMENT);
+  var code = 'robot.setTorso(0.4);\n';
+};
+
 Blockly.JavaScript['robot_wait_for_action_fetch'] = function(block) {
   var dropdown_name = Blockly.JavaScript.quote_(block.getFieldValue('NAME'));
   if (dropdown_name === '\'ALL_ACTIONS\'') {

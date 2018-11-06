@@ -653,8 +653,7 @@ Blockly.Blocks['robot_manipulation_set_torso'] = {
     this.appendValueInput("HEIGHT")
       .setCheck("Number")
       .appendField("move torso to (m)");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setOutput(true);
     this.setColour(85);
     this.setTooltip('Enter height between 0 and 0.4 meters');
     this.setHelpUrl('');
@@ -926,6 +925,18 @@ Blockly.Blocks['robot_is_done_fetch'] = {
     this.setOutput(true, "Boolean");
     this.setColour(20);
     this.setTooltip("Checks if the chosen action is completed");
+    this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['robot_start'] = {
+  init: function() {
+    this.appendValueInput("ACTION")
+        .appendField("start");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(20);
+    this.setTooltip("Starts the given action");
     this.setHelpUrl("");
   }
 };
