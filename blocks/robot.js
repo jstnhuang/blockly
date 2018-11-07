@@ -15,8 +15,9 @@ Blockly.Blocks['robot_display_message_h2'] = {
     this.appendValueInput("TEXT")
         .setCheck("String")
         .appendField("display message");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    // this.setPreviousStatement(true, null);
+    // this.setNextStatement(true, null);
+    this.setOutput(true);
     this.setColour(125);
     this.setTooltip('Displays a message on the robot\'s screen.');
     this.setHelpUrl('');
@@ -33,8 +34,9 @@ Blockly.Blocks['robot_display_message_h1h2'] = {
         .setCheck("String")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("regular text");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    // this.setPreviousStatement(true, null);
+    // this.setNextStatement(true, null);
+    this.setOutput(true);
     this.setColour(125);
     this.setTooltip('Displays a message with both big and regular size text.');
     this.setHelpUrl('');
@@ -151,8 +153,7 @@ Blockly.Blocks['robot_sound_say'] = {
     this.appendValueInput("TEXT")
         .setCheck("String")
         .appendField("say");
-    this.setPreviousStatement(true);
-    this.setNextStatement(true);
+    this.setOutput(true);	  
     this.setColour(115);
     this.setTooltip('Makes the robot say something.');
     this.setHelpUrl('');
@@ -567,8 +568,7 @@ Blockly.Blocks['robot_manipulation_open_gripper'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("open gripper");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setOutput(true);	  
     this.setColour(105);
     this.setTooltip('Opens the gripper.');
     this.setHelpUrl('');
@@ -582,8 +582,7 @@ Blockly.Blocks['robot_manipulation_close_gripper_with_effort'] = {
         .appendField("close gripper with")
     this.appendDummyInput()
         .appendField("N force");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setOutput(true);	  
     this.setColour(105);
     this.setTooltip('Closes the gripper with a maximum amount of force');
     this.setHelpUrl('');
@@ -640,8 +639,7 @@ Blockly.Blocks['robot_manipulation_move_head'] = {
         .setCheck("Number")
         .appendField("tilt (degrees)");
     this.setInputsInline(true);
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setOutput(true);	  
     this.setColour(95);
     this.setTooltip("Pan angle ranges from -90 to 90 degrees. Tilt angle ranges from -90 to 45 degrees. ");
     this.setHelpUrl("");
@@ -653,6 +651,7 @@ Blockly.Blocks['robot_manipulation_set_torso'] = {
     this.appendValueInput("HEIGHT")
       .setCheck("Number")
       .appendField("move torso to (m)");
+    this.setInputsInline(true);
     this.setOutput(true);
     this.setColour(85);
     this.setTooltip('Enter height between 0 and 0.4 meters');
@@ -985,7 +984,7 @@ Blockly.Blocks['slip_gripper'] = {
     this.appendDummyInput()
         .appendField("gripper slipped");
     this.setOutput(true, "Boolean");
-    this.setColour(105);
+    this.setColour(40);
  this.setTooltip("Returns true if the gripper has slipped since the last time a goal was sent to the gripper.");
  this.setHelpUrl("");
   }
@@ -1082,4 +1081,3 @@ Blockly.Blocks['speech_contains'] = {
  this.setHelpUrl("");
   }
 };
-

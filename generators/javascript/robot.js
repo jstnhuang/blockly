@@ -314,8 +314,8 @@ Blockly.JavaScript['robot_is_done_fetch'] = function(block) {
 };
 
 Blockly.JavaScript['robot_start'] = function(block) {
-  Blockly.JavaScript.valueToCode(block, 'ACTION', Blockly.JavaScript.ORDER_ASSIGNMENT);
-  var code = 'robot.setTorso(0.4);\n';
+  var code = Blockly.JavaScript.statementToCode(block, 'ACTION', Blockly.JavaScript.ORDER_ASSIGNMENT);
+  return code;
 };
 
 Blockly.JavaScript['robot_wait_for_action_fetch'] = function(block) {
