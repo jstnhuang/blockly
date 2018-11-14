@@ -940,6 +940,18 @@ Blockly.Blocks['robot_start'] = {
   }
 };
 
+Blockly.Blocks['robot_start_and_wait'] = {
+  init: function() {
+    this.appendValueInput("ACTION")
+        .appendField("start and wait for");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(20);
+    this.setTooltip("Starts and waits for the given action to complete");
+    this.setHelpUrl("");
+  }
+};
+
 Blockly.Blocks['robot_wait_for_action_fetch'] = {
   init: function() {
     this.appendDummyInput()

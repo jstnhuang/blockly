@@ -55,7 +55,7 @@ Blockly.JavaScript['robot_display_wait_for_button'] = function(block) {
 
 Blockly.JavaScript['robot_movement_go_to'] = function(block) {
   var value_location = Blockly.JavaScript.valueToCode(block, 'LOCATION', Blockly.JavaScript.ORDER_NONE) || '\'\'';
-  var code = 'robot.goTo(' + value_location + ')';
+  var code = 'GoTo(' + value_location + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
@@ -72,7 +72,7 @@ Blockly.JavaScript['robot_movement_go_to_dock'] = function(block) {
 
 Blockly.JavaScript['robot_sound_say'] = function(block) {
   var value_text = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_NONE) || '\'\'';
-  var code = 'robot.say(' + value_text + ');\n';
+  var code = 'Say(' + value_text + ');\n';
   return code;
 };
 
@@ -136,13 +136,13 @@ Blockly.JavaScript['robot_movement_tuck_arms'] = function(block) {
 };
 
 Blockly.JavaScript['robot_manipulation_open_gripper'] = function(block) {
-  var code = 'robot.openGripper();\n';
+  var code = 'OpenGripper();\n';
   return code;
 };
 
 Blockly.JavaScript['robot_manipulation_close_gripper_with_effort'] = function(block) {
   var number_force = Blockly.JavaScript.valueToCode(block, 'FORCE', Blockly.JavaScript.ORDER_NONE);
-  var code = 'robot.closeGripper(' + number_force + ');\n';
+  var code = 'CloseGripper(' + number_force + ');\n';
   return code;
 };
 
@@ -215,7 +215,7 @@ Blockly.JavaScript['robot_manipulation_run_pbd_action'] = function(block) {
 
 Blockly.JavaScript['robot_manipulation_run_pbd_program'] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_NONE) || '\'\'';
-  var code = 'robot.runRapidPbdProgram(' + value_name + ')';
+  var code = 'RapidPbd(' + value_name + ')';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
 
@@ -228,13 +228,13 @@ Blockly.JavaScript['robot_pbd_programs'] = function(block) {
 Blockly.JavaScript['robot_manipulation_move_head'] = function(block) {
   var value_pan = Blockly.JavaScript.valueToCode(block, 'PAN', Blockly.JavaScript.ORDER_COMMA);
   var value_tilt = Blockly.JavaScript.valueToCode(block, 'TILT', Blockly.JavaScript.ORDER_COMMA);
-  var code = 'robot.moveHead(' + value_pan + ', ' + value_tilt + ');\n';
+  var code = 'Head(' + value_pan + ', ' + value_tilt + ');\n';
   return code;
 };
 
 Blockly.JavaScript['robot_manipulation_set_torso'] = function(block) {
   var value_height = Blockly.JavaScript.valueToCode(block, 'HEIGHT', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = 'robot.setTorso(' + value_height + ');\n';
+  var code = 'Torso(' + value_height + ');\n';
   return code;
 };
 
@@ -314,7 +314,16 @@ Blockly.JavaScript['robot_is_done_fetch'] = function(block) {
 };
 
 Blockly.JavaScript['robot_start'] = function(block) {
-  var code = Blockly.JavaScript.statementToCode(block, 'ACTION', Blockly.JavaScript.ORDER_ASSIGNMENT);
+  var result = Blockly.JavaScript.statementToCode(block, 'ACTION', Blockly.JavaScript.ORDER_ASSIGNMENT);
+  var action = result.split("\n");
+  var code = action[0] + '\n  robot.start' + action[1].trim();
+  return code;
+};
+
+Blockly.JavaScript['robot_start_and_wait'] = function(block) {
+  var result = Blockly.JavaScript.statementToCode(block, 'ACTION', Blockly.JavaScript.ORDER_ASSIGNMENT);
+  var action = result.split("\n");
+  var code = action[0] + '\n  robot.wait' + action[1].trim();
   return code;
 };
 
