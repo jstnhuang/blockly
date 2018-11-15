@@ -130,6 +130,7 @@ Blockly.Blocks['robot_movement_go_to'] = {
     this.appendValueInput("LOCATION")
         .setCheck("String")
         .appendField("go to");
+    this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setColour(75);
     this.setTooltip('Makes the robot go to a named location.');
@@ -557,6 +558,7 @@ Blockly.Blocks['robot_manipulation_run_pbd_program'] = {
     this.appendValueInput("NAME")
         .setCheck(null)
         .appendField("run Rapid PbD program");
+    this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setColour(65);
     this.setTooltip('Runs a Rapid PbD program');
