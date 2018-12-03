@@ -129,7 +129,7 @@ Blockly.Blocks['robot_movement_go_to'] = {
   init: function() {
     this.appendValueInput("LOCATION")
         .setCheck("String")
-        .appendField("go to");
+        .appendField("navigation to");
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
     this.setColour(75);
@@ -586,7 +586,7 @@ Blockly.Blocks['robot_manipulation_close_gripper_with_effort'] = {
         .appendField("N force");
     this.setOutput(true);	  
     this.setColour(105);
-    this.setTooltip('Closes the gripper with a maximum amount of force');
+    this.setTooltip('Closes gripper with given amount of force. Force ranges from 35N to 100N.');
     this.setHelpUrl('');
   }
 };
@@ -634,12 +634,14 @@ Blockly.Blocks['robot_manipulation_is_gripper_open'] = {
 Blockly.Blocks['robot_manipulation_move_head'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("move head to pan (degrees)");
+        .appendField("move head to pan");
     this.appendValueInput("PAN")
-        .setCheck("Number");
+        .setCheck("Number")
     this.appendValueInput("TILT")
         .setCheck("Number")
-        .appendField("tilt (degrees)");
+        .appendField("degrees, tilt");
+    this.appendDummyInput()
+        .appendField("degrees");
     this.setInputsInline(true);
     this.setOutput(true);	  
     this.setColour(95);
@@ -652,7 +654,9 @@ Blockly.Blocks['robot_manipulation_set_torso'] = {
   init: function() {
     this.appendValueInput("HEIGHT")
       .setCheck("Number")
-      .appendField("move torso to (m)");
+      .appendField("move torso to");
+    this.appendDummyInput()
+        .appendField("m");
     this.setInputsInline(true);
     this.setOutput(true);
     this.setColour(85);
@@ -971,7 +975,7 @@ Blockly.Blocks['robot_wait_for_action_fetch'] = {
 Blockly.Blocks['robot_cancel_fetch'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("cancel")
+        .appendField("stop")
         .appendField(new Blockly.FieldDropdown([["torso","TORSO"], ["head", "HEAD"], ["gripper","GRIPPER"], ["question", "QUESTION"], ["navigation","NAVIGATION"], ["PbD","PBD"], ["timer","TIMER"], ["speech input","SPEECH_INPUT"], ["speech input wake word","SPEECH_INPUT_WAKE_WORD"]]), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);

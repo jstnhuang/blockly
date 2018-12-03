@@ -55,8 +55,8 @@ Blockly.JavaScript['robot_display_wait_for_button'] = function(block) {
 
 Blockly.JavaScript['robot_movement_go_to'] = function(block) {
   var value_location = Blockly.JavaScript.valueToCode(block, 'LOCATION', Blockly.JavaScript.ORDER_NONE) || '\'\'';
-  var code = 'GoTo(' + value_location + ')';
-  return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
+  var code = 'GoTo(' + value_location + ');\n';
+  return code;
 };
 
 Blockly.JavaScript['robot_locations'] = function(block) {
