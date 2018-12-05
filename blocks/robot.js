@@ -132,7 +132,7 @@ Blockly.Blocks['robot_movement_go_to'] = {
         .appendField("navigation to");
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
-    this.setColour(75);
+    this.setColour(65);
     this.setTooltip('Makes the robot go to a named location.');
     this.setHelpUrl('');
   }
@@ -155,7 +155,7 @@ Blockly.Blocks['robot_sound_say'] = {
         .setCheck("String")
         .appendField("say");
     this.setOutput(true);	  
-    this.setColour(115);
+    this.setColour(105);
     this.setTooltip('Makes the robot say something.');
     this.setHelpUrl('');
   }
@@ -560,7 +560,7 @@ Blockly.Blocks['robot_manipulation_run_pbd_program'] = {
         .appendField("run Rapid PbD program");
     this.setInputsInline(true);
     this.setOutput(true, "Boolean");
-    this.setColour(65);
+    this.setColour(75);
     this.setTooltip('Runs a Rapid PbD program');
     this.setHelpUrl('');
   }
@@ -571,7 +571,7 @@ Blockly.Blocks['robot_manipulation_open_gripper'] = {
     this.appendDummyInput()
         .appendField("open gripper");
     this.setOutput(true);	  
-    this.setColour(105);
+    this.setColour(85);
     this.setTooltip('Opens the gripper.');
     this.setHelpUrl('');
   }
@@ -585,7 +585,7 @@ Blockly.Blocks['robot_manipulation_close_gripper_with_effort'] = {
     this.appendDummyInput()
         .appendField("N force");
     this.setOutput(true);	  
-    this.setColour(105);
+    this.setColour(85);
     this.setTooltip('Closes gripper with given amount of force. Force ranges from 35N to 100N.');
     this.setHelpUrl('');
   }
@@ -644,7 +644,7 @@ Blockly.Blocks['robot_manipulation_move_head'] = {
         .appendField("degrees");
     this.setInputsInline(true);
     this.setOutput(true);	  
-    this.setColour(95);
+    this.setColour(115);
     this.setTooltip("Pan angle ranges from -90 to 90 degrees. Tilt angle ranges from -90 to 45 degrees. ");
     this.setHelpUrl("");
   }
@@ -659,7 +659,7 @@ Blockly.Blocks['robot_manipulation_set_torso'] = {
         .appendField("m");
     this.setInputsInline(true);
     this.setOutput(true);
-    this.setColour(85);
+    this.setColour(95);
     this.setTooltip('Enter height between 0 and 0.4 meters');
     this.setHelpUrl('');
   }
